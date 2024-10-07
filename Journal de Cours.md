@@ -136,3 +136,17 @@ docker run --name module374 -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=module
 docker exec -it module374 mysql -p
 ```
 
+## 30 Septembre 2024
+
+Créer une image docker personnalisée avec un Dockerfile
+
+```Dockerfile
+# Utilisation de l'image officielle MySQL la plus récente
+FROM mysql:latest
+
+# Permettre à MySQL de démarrer sans mot de passe root
+ENV MYSQL_ALLOW_EMPTY_PASSWORD=1
+
+# Copie du fichier init.sql dans le répertoire où MySQL recherche les scripts
+COPY init.sql /docker-entrypoint-initdb.d/
+```
