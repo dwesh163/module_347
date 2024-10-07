@@ -124,13 +124,13 @@ Démarrer un docker MySql avec l'(image)[https://hub.docker.com/_/mysql] sur Doc
 docker pull mysql:latest
 ```
 
-#### Run the image
+#### Lancer l'image
 
 ```bash
 docker run --name module374 -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=module374 -e MYSQL_USER=user -e MYSQL_PASSWORD=secret -p 3306:3306 -d mysql:latest
 ```
 
-#### Enter in the docker
+#### Entrer dans le docker
 
 ```bash
 docker exec -it module374 mysql -p
@@ -150,3 +150,4 @@ ENV MYSQL_ALLOW_EMPTY_PASSWORD=1
 # Copie du fichier init.sql dans le répertoire où MySQL recherche les scripts
 COPY init.sql /docker-entrypoint-initdb.d/
 ```
+
